@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- collego il file CSS -->
+    <link rel="stylesheet" href="./assets/style.css" />
+
+    <title>Tombola</title>
+  </head>
+
+  <body>
+    <div class="container">
+      <!-- titolo app -->
+      <h1>Tombola</h1>
+
+      <!--
+        SEZIONE CONTROLLI:
+        - a sinistra: scelgo quante cartelle e le genero
+        - a destra: pulsanti gioco (estrai/reset) + ultimo numero estratto
+      -->
+      <section class="controls">
+        <div class="setup">
+          <!-- input per scegliere quante cartelle creare (extra) -->
+          <label for="cardsCount">Numero cartelle:</label>
+          <input id="cardsCount" type="number" min="1" max="9" value="1" />
+
+          <!-- bottone che genera le cartelle prima di iniziare -->
+          <button id="startBtn">Genera cartelle</button>
+        </div>
+
+        <div class="play">
+          <!-- disabilitato finché non ho generato le cartelle -->
+          <button id="drawBtn">Estrai numero</button>
+
+          <!-- reset totale -->
+          <button id="resetBtn">Nuova partita</button>
+
+          <!-- mostra l'ultimo numero estratto -->
+          <p class="last">Ultimo numero: <span id="lastNumber">-</span></p>
+        </div>
+      </section>
+
+      <!-- TABELLONE PRINCIPALE -->
+      <h2>Tabellone (1-76)</h2>
+      <section id="board" class="board"></section>
+
+      <!-- CARTELLE GIOCATORI (extra) -->
+      <h2>Cartelle giocatori</h2>
+      <section id="cards" class="cards"></section>
+    </div>
+
+    <!-- collego il file JS (deve stare dopo l'HTML così i query funzionano) -->
+    <script src="./JavaScript/index.js"></script>
+  </body>
+</html>
