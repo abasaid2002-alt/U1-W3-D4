@@ -1,57 +1,23 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <!-- collego il file CSS -->
+    <title>Tombola Challenge</title>
     <link rel="stylesheet" href="./assets/style.css" />
-
-    <title>Tombola</title>
   </head>
-
   <body>
     <div class="container">
-      <!-- titolo app -->
-      <h1>Tombola</h1>
-
-      <!--
-        SEZIONE CONTROLLI:
-        - a sinistra: scelgo quante cartelle e le genero
-        - a destra: pulsanti gioco (estrai/reset) + ultimo numero estratto
-      -->
-      <section class="controls">
-        <div class="setup">
-          <!-- input per scegliere quante cartelle creare (extra) -->
-          <label for="cardsCount">Numero cartelle:</label>
-          <input id="cardsCount" type="number" min="1" max="9" value="1" />
-
-          <!-- bottone che genera le cartelle prima di iniziare -->
-          <button id="startBtn">Genera cartelle</button>
-        </div>
-
-        <div class="play">
-          <!-- disabilitato finché non ho generato le cartelle -->
-          <button id="drawBtn">Estrai numero</button>
-
-          <!-- reset totale -->
-          <button id="resetBtn">Nuova partita</button>
-
-          <!-- mostra l'ultimo numero estratto -->
-          <p class="last">Ultimo numero: <span id="lastNumber">-</span></p>
-        </div>
-      </section>
-
-      <!-- TABELLONE PRINCIPALE -->
-      <h2>Tabellone (1-76)</h2>
-      <section id="board" class="board"></section>
-
-      <!-- CARTELLE GIOCATORI (extra) -->
-      <h2>Cartelle giocatori</h2>
-      <section id="cards" class="cards"></section>
+      <main>
+        <h1 class="t-center">Tabellone</h1>
+        <div class="main-board m-auto board"></div>
+        <button id="randBtn" class="btn">Fai uscire un numero</button>
+        <input type="number" id="usersNumber" class="input-field" value="1" />
+        <button id="userBoardBtn" class="btn">Crea cartelline</button>
+        <h5 id="randNum"></h5>
+      </main>
     </div>
-
-    <!-- collego il file JS (deve stare dopo l'HTML così i query funzionano) -->
     <script src="./JavaScript/index.js"></script>
   </body>
 </html>
